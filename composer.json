@@ -1,0 +1,22 @@
+{
+    "name": "ubermanu/magento2-toast",
+    "description": "Replace Magento 2 messages with toast notifications",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmanuel Vodor",
+            "email": "emmanuel.vodor@proton.me"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ubermanu\\Toast\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
