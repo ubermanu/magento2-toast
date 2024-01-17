@@ -2,24 +2,16 @@ require([
     'jquery',
     'underscore',
     'Magento_Customer/js/customer-data',
-    'toastify',
+    'Ubermanu_Toast/js/toast-renderer',
     'jquery/jquery-storageapi'
-], function ($, _, customerData, Toastify) {
+], function ($, _, customerData, createToast) {
     'use strict';
 
     // Show toast message
     function showToastMessage(data) {
         if (_.isArray(data.messages)) {
             data.messages.forEach(function (message) {
-                Toastify({
-                    text: message.text,
-                    duration: 3000,
-                    close: true,
-                    gravity: 'bottom',
-                    position: 'center',
-                    stopOnFocus: true,
-                    escapeMarkup: false,
-                }).showToast();
+                createToast(message).showToast();
             })
         }
     }
