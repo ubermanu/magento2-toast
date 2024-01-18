@@ -3,8 +3,8 @@
 //  _____________________________________________
 
 @toast__z-index: 2147483647;
-@toast__color: @color-white;
-@toast__background: linear-gradient(135deg, @theme__color__primary, @theme__color__primary-alt);
+@toast__color: @text__color;
+@toast__background: @page__background-color;
 @toast__box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px fade(@theme__color__primary, 30%);
 @toast__border-radius: 2px;
 @toast__max-width: calc(50% - @layout__width-xs-indent * 2);
@@ -73,6 +73,26 @@
             left: 0;
             right: 0;
             max-width: fit-content;
+        }
+
+        &.is-info {
+            .lib-css(background, @message-info__background);
+            .lib-css(color, @message-info__color);
+        }
+
+        &.is-success {
+            .lib-css(background, @message-success__background);
+            .lib-css(color, @message-success__color);
+        }
+
+        &.is-error {
+            .lib-css(background, @message-error__background);
+            .lib-css(color, @message-error__color);
+        }
+
+        &.is-warning {
+            .lib-css(background, @message-warning__background);
+            .lib-css(color, @message-warning__color);
         }
     }
 
