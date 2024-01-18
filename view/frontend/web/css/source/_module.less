@@ -2,7 +2,20 @@
 //  Variables
 //  _____________________________________________
 
-@toastify__z-index: 2147483647;
+@toast__z-index: 2147483647;
+@toast__color: @color-white;
+@toast__background: linear-gradient(135deg, @theme__color__primary, @theme__color__primary-alt);
+@toast__box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
+@toast__border-radius: 2px;
+@toast__max-width: calc(50% - @layout__width-xs-indent * 2);
+@toast__padding: @indent__m @indent__l;
+
+@toast__close__icon: @icon-remove;
+@toast__close__color: false;
+@toast__close__color-hover: false;
+@toast__close__color-active: false;
+@toast__close__margin: 0 0 0 @indent__s;
+@toast__close__font-size: 1.2rem;
 
 //
 //  Common
@@ -10,19 +23,18 @@
 
 & when (@media-common = true) {
     .toastify {
-        padding: 12px 20px;
-        color: #ffffff;
+        padding: @toast__padding;
+        color: @toast__color;
         display: inline-block;
-        box-shadow: 0 3px 6px -1px rgba(0, 0, 0, 0.12), 0 10px 36px -4px rgba(77, 96, 232, 0.3);
-        background: linear-gradient(135deg, #73a5ff, #5477f5);
+        box-shadow: @toast__box-shadow;
+        background: @toast__background;
         position: fixed;
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-        border-radius: 2px;
+        border-radius: @toast__border-radius;
         cursor: pointer;
-        text-decoration: none;
-        max-width: calc(50% - 20px);
-        z-index: @toastify__z-index;
+        max-width: @toast__max-width;
+        z-index: @toast__z-index;
 
         &.on {
             opacity: 1;
@@ -52,7 +64,7 @@
             width: 1.5em;
             height: 1.5em;
             margin: -7px 5px;
-            border-radius: 2px;
+            border-radius: 50%;
         }
 
         &-center {
@@ -65,14 +77,19 @@
     }
 
     .toast-close {
-        background: transparent;
-        border: 0;
-        color: white;
-        cursor: pointer;
-        font-family: inherit;
-        font-size: 1em;
-        opacity: 0.4;
-        padding: 0 5px;
+        .lib-button-reset();
+        font-size: 0; // Remove the emoji from taostify
+        float: right;
+
+        .lib-icon-font(
+            @_icon-font-content: @toast__close__icon,
+            @_icon-font-size: @toast__close__font-size,
+            @_icon-font-color: @toast__close__color,
+            @_icon-font-color-hover: @toast__close__color-hover,
+            @_icon-font-color-active: @toast__close__color-active,
+            @_icon-font-margin: @toast__close__margin,
+            @_icon-font-display: false
+        );
     }
 }
 
