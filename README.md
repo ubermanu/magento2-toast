@@ -8,4 +8,4 @@ This module replaces the session messages with [toasts](https://apvarun.github.i
 
 ## Usage
 
-Just install the module and you're done. All messages will be displayed using as toasts.
+Just install the module and you're done. All messages will be displayed as toasts.
