@@ -25,6 +25,7 @@
     .toastify {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         .lib-css(padding, @toast__padding);
         .lib-css(color, @toast__color);
         .lib-css(box-shadow, @toast__box-shadow);
@@ -35,7 +36,6 @@
         position: fixed;
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-        cursor: pointer;
 
         &.on {
             opacity: 1;
@@ -111,6 +111,7 @@
             .lib-button-reset();
             font-size: 0; // Remove the emoji from taostify
             .lib-css(margin, @toast__close__margin);
+            cursor: pointer;
 
             .lib-icon-font(
                 @_icon-font-content: @toast__close__icon,
