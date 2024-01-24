@@ -9,7 +9,7 @@ define([
      */
     return function (message) {
         return Toastify({
-            text: message.text,
+            text: '<div class="toast-content">' + message.text + '</div>',
             className: 'is-' + message.type,
             duration: 3000,
             close: true,

@@ -25,7 +25,8 @@
     .toastify {
         padding: @toast__padding;
         color: @toast__color;
-        display: inline-block;
+        display: flex;
+        align-items: center;
         box-shadow: @toast__box-shadow;
         background: @toast__background;
         position: fixed;
@@ -99,22 +100,28 @@
             .lib-css(background, @message-warning__background);
             .lib-css(color, @message-warning__color);
         }
-    }
 
-    .toast-close {
-        .lib-button-reset();
-        font-size: 0; // Remove the emoji from taostify
-        float: right;
+        .toast-content {
+            p:last-child {
+                margin-bottom: 0;
+            }
+        }
 
-        .lib-icon-font(
-            @_icon-font-content: @toast__close__icon,
-            @_icon-font-size: @toast__close__font-size,
-            @_icon-font-color: @toast__close__color,
-            @_icon-font-color-hover: @toast__close__color-hover,
-            @_icon-font-color-active: @toast__close__color-active,
-            @_icon-font-margin: @toast__close__margin,
-            @_icon-font-display: false
-        );
+        .toast-close {
+            .lib-button-reset();
+            font-size: 0; // Remove the emoji from taostify
+            .lib-css(margin, @toast__close__margin);
+
+            .lib-icon-font(
+                @_icon-font-content: @toast__close__icon,
+                @_icon-font-size: @toast__close__font-size,
+                @_icon-font-color: @toast__close__color,
+                @_icon-font-color-hover: @toast__close__color-hover,
+                @_icon-font-color-active: @toast__close__color-active,
+                @_icon-font-margin: false,
+                @_icon-font-display: false
+            );
+        }
     }
 }
 
