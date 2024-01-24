@@ -23,19 +23,19 @@
 
 & when (@media-common = true) {
     .toastify {
-        padding: @toast__padding;
-        color: @toast__color;
         display: flex;
         align-items: center;
-        box-shadow: @toast__box-shadow;
-        background: @toast__background;
+        .lib-css(padding, @toast__padding);
+        .lib-css(color, @toast__color);
+        .lib-css(box-shadow, @toast__box-shadow);
+        .lib-css(background, @toast__background);
+        .lib-css(border-radius, @toast__border-radius);
+        .lib-css(max-width, @toast__max-width);
+        .lib-css(z-index, @toast__z-index);
         position: fixed;
         opacity: 0;
         transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
-        border-radius: @toast__border-radius;
         cursor: pointer;
-        max-width: @toast__max-width;
-        z-index: @toast__z-index;
 
         &.on {
             opacity: 1;
